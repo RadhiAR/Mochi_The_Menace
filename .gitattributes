@@ -1,0 +1,12 @@
+# Same line endings on Windows and Mac
+* text=auto
+
+# Photos and videos are binary: never touch them
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.mp4 binary
+*.mov binary
+*.webm binary

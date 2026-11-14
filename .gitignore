@@ -1,0 +1,20 @@
+# Dependencies (none today, but just in case)
+node_modules/
+
+# Computer junk files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Build output from the deploy workflow
+_site/
+
+# Logs and secrets
+npm-debug.log*
+.env
+.env.*

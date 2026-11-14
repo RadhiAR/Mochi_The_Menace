@@ -1,0 +1,93 @@
+# =====================================================================
+# Pipeline: alpha -> beta -> prod
+#
+# 1. You push to the alpha branch.
+# 2. Unit tests run (npm test).
+# 3. Tests pass -> alpha is copied to beta automatically.
+# 4. The run pauses and asks you to approve.
+# 5. You approve -> beta is copied to prod, which deploys the live site
+#    (see deploy.yml).
+#
+# Needs a repository secret named PIPELINE_TOKEN (see README > Pipeline).
+# =====================================================================
+name: Pipeline
+
+on:
+  push:
+    branches: [alpha]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit tests (alpha)
+    runs-on: ubuntu-latest
+    environment: alpha
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Run unit tests
+        run: npm test
+
+  promote-beta:
+    name: Promote to beta
+    needs: test
+    if: github.ref == 'refs/heads/alpha'
+    runs-on: ubuntu-latest
+    environment: beta
+    concurrency:
+      group: promote-beta
+      cancel-in-progress: false
+    steps:
+      - name: Check the pipeline token
+        env:
+          TOKEN: ${{ secrets.PIPELINE_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Missing secret PIPELINE_TOKEN. Add it in Settings > Secrets and variables > Actions (see README > Pipeline)."
+            exit 1
+          fi
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.PIPELINE_TOKEN }}
+          fetch-depth: 0
+      - name: Move beta to the tested commit
+        run: |
+          git push origin "${GITHUB_SHA}:refs/heads/beta" || {
+            echo "::error::beta has commits that are not on alpha. Only the pipeline should change beta."
+            exit 1
+          }
+          echo "### beta now at \`${GITHUB_SHA::7}\`" >> "$GITHUB_STEP_SUMMARY"
+
+  promote-prod:
+    name: Promote to prod (waits for your approval)
+    needs: promote-beta
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: promote-prod
+      cancel-in-progress: true # a newer tested version replaces an older one waiting for approval
+    steps:
+      - name: Check the pipeline token
+        env:
+          TOKEN: ${{ secrets.PIPELINE_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Missing secret PIPELINE_TOKEN. Add it in Settings > Secrets and variables > Actions (see README > Pipeline)."
+            exit 1
+          fi
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.PIPELINE_TOKEN }}
+          fetch-depth: 0
+      - name: Move prod to the approved commit
+        run: |
+          git push origin "${GITHUB_SHA}:refs/heads/prod" || {
+            echo "::error::prod has commits that are not on beta. Only the pipeline should change prod."
+            exit 1
+          }
+          echo "### prod now at \`${GITHUB_SHA::7}\`, deploying the live site" >> "$GITHUB_STEP_SUMMARY"

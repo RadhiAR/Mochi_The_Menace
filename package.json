@@ -1,0 +1,16 @@
+{
+  "name": "mochi-the-menace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mochi the Menace: photo book, about & links, and diet FAQ website",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs --open",
+    "dev:phone": "node scripts/dev-server.mjs --host",
+    "start": "node scripts/dev-server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

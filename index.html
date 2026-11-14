@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formspree.io; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#fdf6f8">
+  <title>Mochi the Menace | Photo book</title>
+  <meta name="description" content="Mochi the Menace: a sweet-faced dog with a long list of incidents. Flip through her photo book and videos.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/photobook.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="wordmark" href="index.html">
+        <svg class="paw" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><ellipse cx="32" cy="42" rx="13" ry="11"/><ellipse cx="15" cy="27" rx="5.5" ry="7" transform="rotate(-20 15 27)"/><ellipse cx="25" cy="16" rx="5.5" ry="7.5"/><ellipse cx="39" cy="16" rx="5.5" ry="7.5"/><ellipse cx="49" cy="27" rx="5.5" ry="7" transform="rotate(20 49 27)"/></svg>
+        Mochi the Menace
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Photo book</a></li>
+          <li><a href="about.html">About &amp; links</a></li>
+          <li><a href="diet.html">Diet &amp; FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="book-section" aria-labelledby="book-title">
+      <div class="wrap book-intro">
+        <h1 id="book-title">Hi, I'm Mochi</h1>
+        <p>Sweet face, long list of incidents. Tap the cover to open my photo book.</p>
+      </div>
+
+      <div class="book-stage" id="bookStage">
+        <div class="book is-closed" id="book" tabindex="0" role="region"
+             aria-roledescription="photo book" aria-label="Mochi's photo book. Use the left and right arrow keys to turn pages.">
+          <div class="book__placeholder">Opening the book…</div>
+        </div>
+      </div>
+
+      <div class="book-controls">
+        <button class="page-btn" id="prevPage" type="button" aria-controls="book">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+        <p class="book-status" id="bookStatus" aria-live="polite"></p>
+        <button class="page-btn" id="nextPage" type="button" aria-controls="book">
+          Next
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p class="book-help">Swipe, tap a page or use the arrow keys to turn pages.</p>
+
+      <noscript>
+        <p class="wrap">Turn on JavaScript to open Mochi's photo book.</p>
+      </noscript>
+    </section>
+
+    <section class="videos wrap" id="videos" aria-labelledby="videos-title" hidden>
+      <div class="videos__head">
+        <h2 id="videos-title">Caught on camera</h2>
+        <p>Moving evidence. Sound on for the full menace experience.</p>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <ul class="social-icons" data-social-icons aria-label="Mochi on social media"></ul>
+      <ul class="footer-links">
+        <li><a href="about.html">About &amp; links</a></li>
+        <li><a href="diet.html">Diet &amp; FAQ</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+      <p>&copy; <span data-year>2026</span> Mochi the Menace</p>
+      <p class="footer-disclosure" data-footer-disclosure hidden>Some links on this site are affiliate links. Mochi may earn a small commission at no extra cost to you.</p>
+    </div>
+  </footer>
+</body>
+</html>
