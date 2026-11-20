@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#fdf6f8">
+  <title>Q&amp;A admin | Mochi the Menace</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="wordmark" href="index.html">
+        <svg class="paw" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><ellipse cx="32" cy="42" rx="13" ry="11"/><ellipse cx="15" cy="27" rx="5.5" ry="7" transform="rotate(-20 15 27)"/><ellipse cx="25" cy="16" rx="5.5" ry="7.5"/><ellipse cx="39" cy="16" rx="5.5" ry="7.5"/><ellipse cx="49" cy="27" rx="5.5" ry="7" transform="rotate(20 49 27)"/></svg>
+        Mochi the Menace
+      </a>
+      <nav class="site-nav" aria-label="Admin">
+        <ul>
+          <li><a href="diet.html">View FAQ page</a></li>
+          <li><button class="btn btn--small btn--ghost" id="lockBtn" type="button" hidden>Lock</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap admin" data-admin-app>
+    <div class="page-head">
+      <h1>Q&amp;A admin</h1>
+      <p class="lede">Answer questions from dog parents and choose what shows on the FAQ page.</p>
+    </div>
+
+    <!-- 1. Unlock -->
+    <section class="admin-card" id="unlockCard" aria-labelledby="unlock-title">
+      <h2 id="unlock-title">Unlock</h2>
+      <p>Paste your <strong>Mochi pipeline</strong> GitHub token (it starts with <code>github_pat_</code>). It stays in this browser tab only and is forgotten when you close the tab. Don't unlock on a shared computer.</p>
+      <form class="admin-form" id="unlockForm" novalidate>
+        <div class="field">
+          <label for="tokenInput">GitHub token</label>
+          <input id="tokenInput" type="password" autocomplete="off" spellcheck="false" required>
+        </div>
+        <div class="admin-row">
+          <button class="btn" id="unlockBtn" type="submit">Unlock</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. Unlocked area -->
+    <div id="adminArea" hidden>
+      <section class="admin-card" aria-labelledby="editor-title">
+        <h2 id="editor-title">Add a Q&amp;A</h2>
+        <p class="admin-hint">Copy the question from the Formspree email, write your answer, then publish. Leave a blank line in your answer to start a new paragraph.</p>
+        <form class="admin-form" id="entryForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="entryName">Asker's name <span class="hint">(optional, "A dog parent" if blank)</span></label>
+              <input id="entryName" type="text" maxlength="60" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="entryDate">Date</label>
+              <input id="entryDate" type="date">
+            </div>
+          </div>
+          <div class="field">
+            <label for="entryQuestion">Question</label>
+            <textarea id="entryQuestion" maxlength="500" rows="3" required></textarea>
+          </div>
+          <div class="field">
+            <label for="entryAnswer">Your answer</label>
+            <textarea id="entryAnswer" maxlength="4000" rows="7" required></textarea>
+          </div>
+          <p class="field-error" id="entryError" role="alert"></p>
+          <div class="admin-row">
+            <button class="btn" id="entrySubmit" type="submit">Add to the list</button>
+            <button class="btn btn--ghost" id="entryCancel" type="button" hidden>Cancel editing</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card" aria-labelledby="list-title">
+        <div class="admin-row admin-row--between">
+          <h2 id="list-title">Q&amp;As on the FAQ page <span id="entryCount"></span></h2>
+          <button class="btn btn--small btn--ghost" id="reloadBtn" type="button">Reload</button>
+        </div>
+        <p class="admin-hint" id="listEmpty" hidden>Nothing published yet. Add your first Q&amp;A above.</p>
+        <ul class="admin-list" id="entryList"></ul>
+      </section>
+
+      <div class="publish-bar" id="publishBar" hidden>
+        <p id="changeSummary">You have unpublished changes.</p>
+        <div class="admin-row">
+          <button class="btn btn--small btn--ghost publish-bar__ghost" id="discardBtn" type="button">Discard</button>
+          <button class="btn btn--small" id="publishBtn" type="button">Publish</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="admin-status" id="adminStatus" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

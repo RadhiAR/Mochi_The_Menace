@@ -33,7 +33,7 @@ jobs:
       - name: Collect only the website files
         run: |
           mkdir _site
-          cp -R index.html about.html diet.html privacy.html css js assets _site/
+          cp -R index.html about.html diet.html privacy.html admin.html css js assets _site/
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site

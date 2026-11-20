@@ -70,7 +70,7 @@ window.MOCHI_CONFIG = {
        2. Paste its endpoint below, e.g. 'https://formspree.io/f/abcdwxyz'
      Option B: leave formEndpoint empty and set contactEmail. The form
        will open the visitor's email app with their question filled in.  */
-  formEndpoint: '', // ✏️
+  formEndpoint: 'https://formspree.io/f/xoednjdk', // ✏️
   contactEmail: '', // ✏️ e.g. 'askmochismom@gmail.com'
 
   /* ---------- Photo book + videos (Home page) ------------------------

@@ -1,7 +1,7 @@
 # Mochi the Menace website
 
 A small static website for Mochi: a flip-open photo book, an About & links page,
-and a Diet & FAQ page with a question form. No frameworks, no build step, no
+and a Dog FAQ page with a question form. No frameworks, no build step, no
 tracking.
 
 ## Folder structure
@@ -10,8 +10,9 @@ tracking.
 Mochi/
 ├── index.html            Home: the photo book + "Caught on camera" videos
 ├── about.html            About Mochi & her mom, social links, affiliate links
-├── diet.html             Diet journey, FAQ, "Ask Mochi's mom" form
+├── diet.html             Dog FAQ (food, health, grooming, gear...) + "Ask Mochi's mom" form
 ├── privacy.html          Privacy policy (needed for the form and the App Store)
+├── admin.html            Q&A admin: add, edit, delete Q&As (unlock with your token)
 ├── README.md             This file
 ├── package.json          "npm run dev" and "npm test"
 ├── .gitignore            Files git should skip (junk files, secrets)
@@ -28,33 +29,35 @@ Mochi/
 │   ├── config.js         ★ YOUR SETTINGS: links, email, captions
 │   ├── main.js           Shared: social/affiliate links, profile photo, footer
 │   ├── photobook.js      Finds photos/videos and runs the flip book
+│   ├── faq.js            Shows published Q&As on the FAQ page
+│   ├── admin.js          Runs the admin page
 │   └── ask-form.js       The question form
 └── assets/
-    ├── images/           moch1.jpg, moch2.jpg, moch3.jpg ...
-    ├── videos/           moch1.mp4, moch2.mp4 ...
+    ├── images/           mochi1.jpg, mochi2.jpg, mochi3.jpg ...
+    ├── videos/           mochi1.mp4, mochi2.mp4 ...
     └── icons/            favicon.svg, apple-touch-icon.png, paw.svg
 ```
 
 ## Adding photos and videos
 
-1. Photos go in `assets/images/`, named `moch1.jpg`, `moch2.jpg`, `moch3.jpg` ...
-2. Videos go in `assets/videos/`, named `moch1.mp4`, `moch2.mp4` ...
+1. Photos go in `assets/images/`, named `mochi1.jpg`, `mochi2.jpg`, `mochi3.jpg` ...
+2. Videos go in `assets/videos/`, named `mochi1.mp4`, `mochi2.mp4` ...
 3. That's it. The site finds them automatically, in number order.
 
 Tips:
-- Use lowercase names. On a web server, `Moch1.JPG` and `moch1.jpg` are different files.
+- Use lowercase names. On a web server, `Moch1.JPG` and `mochi1.jpg` are different files.
 - Don't skip more than 4 numbers in a row, or the site stops looking.
 - iPhone photos are often HEIC, which most browsers can't show. Export or share them as JPG
   (on iPhone: Settings > Camera > Formats > Most Compatible).
 - Resize photos to about 1600 px on the long side so the book loads fast.
 - Keep videos short and MP4 (H.264). That format plays everywhere, including iPhone.
-- `moch1` is the book cover and profile picture. Change `coverPhoto` in `js/config.js` to use another.
+- `mochi1` is the book cover and profile picture. Change `coverPhoto` in `js/config.js` to use another.
 
 ## Editing text and links
 
 - Links, email, affiliate items and photo captions: `js/config.js` (comments explain each one).
 - Paragraphs about Mochi and her mom, "Mochi's file": `about.html`
-- Diet story and FAQ answers: `diet.html` (copy a `<details>` block to add a question)
+- FAQ questions and answers: `diet.html` (copy a `<details>` block into a topic section to add one)
 - Search the files for `✏️ EDIT` to find every spot meant for your own words.
 
 Anything with an empty link (`url: ''`) is hidden, so the live site never shows
@@ -71,6 +74,23 @@ Pick one in `js/config.js`:
 
 If you use a form service other than Formspree, add its domain to the
 `Content-Security-Policy` line at the top of `diet.html` (in `connect-src` and `form-action`).
+
+## Answering questions (admin page)
+
+Questions from the "Ask Mochi's mom" form arrive in your email (Formspree).
+To publish one with your answer:
+
+1. Open https://radhiar.github.io/Mochi_The_Menace/admin.html
+2. Paste your "Mochi pipeline" GitHub token and click **Unlock**
+   (it's kept in that browser tab only).
+3. Fill in the asker's name, their question and your answer, then **Add to the list**.
+   Use **Edit** or **Delete** on any Q&A already published.
+4. Click **Publish**. This saves `assets/data/faq.json` to alpha and starts the pipeline.
+   Approve it in the Actions tab and the FAQ page updates.
+
+Because the admin page saves straight to GitHub, run `git pull` in VS Code's terminal
+before you start editing files on your computer. (One-time setup so pulls are smooth:
+`git config --global pull.rebase true`.)
 
 ## Previewing on your computer
 
@@ -99,7 +119,7 @@ First time only (GitHub already has a starter README, so we adopt its history
 instead of fighting it, then work on the `alpha` branch):
 
 ```
-cd ~/Desktop/Mochi
+cd ~/Desktop/mochimain
 git init -b main
 git remote add origin https://github.com/RadhiAR/Mochi_The_Menace.git
 git fetch origin

@@ -55,6 +55,9 @@ body {
 
 main { flex: 1; }
 
+/* anything marked hidden stays hidden, whatever its other styles say */
+[hidden] { display: none !important; }
+
 img, video, svg { display: block; max-width: 100%; }
 
 h1, h2, h3 {
@@ -929,6 +932,103 @@ a:hover { color: var(--berry-dark); }
 .social-icon:hover { background: var(--berry); color: #fff; }
 
 .footer-disclosure { flex-basis: 100%; font-size: 0.8rem !important; opacity: 0.8; }
+
+/* =====================================================================
+   Q&A (FAQ page) + admin page
+   ===================================================================== */
+.qa-list summary { padding-right: 2.75rem; }
+.qa__q { display: block; }
+.qa__by {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--bean-soft);
+}
+.qa .faq-answer p { white-space: pre-line; }
+
+.qa-empty {
+  max-width: 46rem;
+  margin: 1.25rem 0 0;
+  padding: 1.1rem 1.25rem;
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+  color: var(--bean-soft);
+}
+
+.admin { padding-bottom: 6rem; }
+.admin-card {
+  max-width: 48rem;
+  margin-bottom: 1.75rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--line), 0 20px 40px -30px rgba(58, 31, 36, 0.5);
+}
+.admin-card h2 { font-size: 1.35rem; }
+.admin-hint { color: var(--bean-soft); font-size: 0.95rem; }
+.admin-form { display: grid; gap: 1.1rem; }
+.admin-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.admin-row--between { justify-content: space-between; }
+.admin-row--between h2 { margin: 0; }
+
+.admin-list { margin: 1rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.admin-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 1rem;
+  padding: 1rem 0.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.admin-item__q { margin: 0; font-weight: 700; }
+.admin-item__meta { margin: 0.15rem 0 0; font-size: 0.88rem; color: var(--bean-soft); }
+.admin-item__a { margin: 0.4rem 0 0; font-size: 0.95rem; white-space: pre-line; }
+.admin-item__actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.4rem; }
+
+.badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  background: var(--matcha-wash);
+  color: var(--matcha-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.btn--danger { background: transparent; color: #b3261e; border-color: #b3261e; }
+.btn--danger:hover { background: #b3261e; border-color: #b3261e; color: #fff; }
+
+.publish-bar {
+  position: sticky;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  max-width: 48rem;
+  padding: 0.7rem 0.8rem 0.7rem 1.25rem;
+  border-radius: 999px;
+  background: var(--bean);
+  color: var(--rice);
+  box-shadow: 0 14px 30px -14px rgba(58, 31, 36, 0.7);
+}
+.publish-bar p { margin: 0; font-weight: 700; }
+.publish-bar__ghost { color: var(--rice); border-color: rgba(253, 246, 248, 0.6); }
+.publish-bar__ghost:hover { background: var(--rice); color: var(--bean); border-color: var(--rice); }
+
+.admin-status { max-width: 48rem; font-weight: 600; }
+.admin-status:empty { display: none; }
+.admin-status.is-ok { color: var(--matcha-deep); }
+.admin-status.is-error { color: #b3261e; }
+
+@media (max-width: 600px) {
+  .admin-item { grid-template-columns: 1fr; }
+  .publish-bar { border-radius: 18px; }
+}
 
 /* =====================================================================
    RESPONSIVE
