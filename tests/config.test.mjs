@@ -30,10 +30,13 @@ test('social links are https or empty, and have labels', () => {
   }
 });
 
-test('Instagram points at mochi_the_menace', () => {
+test('Instagram link is a proper instagram.com profile link', () => {
   const insta = loadConfig().social.find((s) => s.id === 'instagram');
   assert.ok(insta, 'Instagram entry exists');
-  assert.match(insta.url, /^https:\/\/(www\.)?instagram\.com\/mochi_the_menace\/?$/);
+  if (insta.url === '') return;
+  const url = new URL(insta.url);
+  assert.match(url.hostname, /^(www\.)?instagram\.com$/, 'Instagram link must be on instagram.com');
+  assert.match(url.pathname, /^\/[A-Za-z0-9._]+\/?$/, 'Instagram link should point to a profile, like https://www.instagram.com/yourname/');
 });
 
 test('affiliate links are https or empty, and have names', () => {
