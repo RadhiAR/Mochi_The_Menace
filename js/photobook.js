@@ -16,7 +16,7 @@
   const PREFIX = cfg.filePrefix || 'moch';
   const IMG_DIR = 'assets/images/';
   const VID_DIR = 'assets/videos/';
-  const IMG_EXTS = cfg.imageExtensions || ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG'];
+  const IMG_EXTS = cfg.imageExtensions || ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'heic', 'HEIC', 'PNG'];
   const VID_EXTS = cfg.videoExtensions || ['mp4', 'MP4', 'mov', 'MOV', 'webm'];
   const MAX = clampInt(cfg.maxItems, 1, 500, 200);
   const STOP_AFTER = clampInt(cfg.stopAfterMissing, 1, 20, 5);
@@ -504,7 +504,7 @@
 
     photos = foundPhotos;
     if (!photos.length && window.console) {
-      console.info('[Mochi] No photos found. Add assets/images/' + PREFIX + '1.jpg, ' + PREFIX + '2.jpg …');
+      console.info('[Mochi] No photos found. Add assets/images/mochi1.JPG' + PREFIX + 'mochi2.JPG');
     }
     build(false);
     bindEvents();

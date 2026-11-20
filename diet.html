@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formspree.io; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-src 'none'">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formspree.io; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#fdf6f8">
-  <title>Mochi's diet journey &amp; FAQ | Mochi the Menace</title>
-  <meta name="description" content="What Mochi's mom learned about picky eating, food switches and sensitive tummies, plus answers to common feeding questions from dog moms.">
+  <title>Dog FAQ: food, health, grooming &amp; more | Mochi the Menace</title>
+  <meta name="description"
+    content="Answers to the questions dog parents ask most: food and diet, health and vet care, grooming, training, gear and everyday life with a pup. Plus ask Mochi's mom your own question.">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
@@ -16,115 +19,490 @@
   <script src="js/main.js" defer></script>
   <script src="js/ask-form.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="wordmark" href="index.html">
-        <svg class="paw" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><ellipse cx="32" cy="42" rx="13" ry="11"/><ellipse cx="15" cy="27" rx="5.5" ry="7" transform="rotate(-20 15 27)"/><ellipse cx="25" cy="16" rx="5.5" ry="7.5"/><ellipse cx="39" cy="16" rx="5.5" ry="7.5"/><ellipse cx="49" cy="27" rx="5.5" ry="7" transform="rotate(20 49 27)"/></svg>
+        <svg class="paw" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <ellipse cx="32" cy="42" rx="13" ry="11" />
+          <ellipse cx="15" cy="27" rx="5.5" ry="7" transform="rotate(-20 15 27)" />
+          <ellipse cx="25" cy="16" rx="5.5" ry="7.5" />
+          <ellipse cx="39" cy="16" rx="5.5" ry="7.5" />
+          <ellipse cx="49" cy="27" rx="5.5" ry="7" transform="rotate(20 49 27)" />
+        </svg>
         Mochi the Menace
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Photo book</a></li>
           <li><a href="about.html">About &amp; links</a></li>
-          <li><a href="diet.html" aria-current="page">Diet &amp; FAQ</a></li>
+          <li><a href="diet.html" aria-current="page">Dog FAQ</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="wrap page-head" aria-labelledby="diet-title">
-      <h1 id="diet-title">Mochi's food journey</h1>
-      <p class="lede">Feeding a small menace isn't always simple. Here's what we went through, what finally worked, and answers to the questions dog moms ask us most.</p>
-      <p class="note"><strong>We're dog parents, not vets.</strong> This page shares our own experience and isn't veterinary advice. Check with your vet before changing your dog's diet, and call them straight away if something seems wrong.</p>
+    <section class="wrap page-head" aria-labelledby="faq-title">
+      <h1 id="faq-title">Dog parent FAQ</h1>
+      <p class="lede">Answers to the questions dog parents ask most, about food, health, grooming, training, gear and
+        everyday life with a pup. Can't find yours? Ask Mochi's mom at the bottom of the page.</p>
+
+      <nav aria-label="FAQ topics">
+        <ul class="footer-links faq-topics">
+          <li><a class="btn btn--small btn--ghost" href="#food">Food &amp; diet</a></li>
+          <li><a class="btn btn--small btn--ghost" href="#health">Health &amp; vet care</a></li>
+          <li><a class="btn btn--small btn--ghost" href="#grooming">Grooming &amp; beauty</a></li>
+          <li><a class="btn btn--small btn--ghost" href="#training">Training &amp; behavior</a></li>
+          <li><a class="btn btn--small btn--ghost" href="#gear">Products &amp; gear</a></li>
+          <li><a class="btn btn--small btn--ghost" href="#life">Everyday life</a></li>
+          <li><a class="btn btn--small" href="#ask">Ask a question</a></li>
+        </ul>
+      </nav>
+      <p class="note"><strong>We're dog parents, not vets.</strong> These answers share what we've learned and what
+        trusted vet guidelines say, but they aren't veterinary advice. Every dog is different, so check with your vet
+        before making changes, and call them straight away if something seems wrong.</p>
     </section>
 
-    <!-- ✏️ EDIT: replace these three steps with your real story -->
-    <section class="wrap journey" aria-labelledby="journey-title">
-      <h2 id="journey-title">What we went through</h2>
-      <ol class="steps">
-        <li>
-          <h3>The struggle</h3>
-          <p>Skipped meals, an upset tummy every time we changed food, and itchy paws we couldn't explain. Every bag we bought seemed to make something worse.</p>
-        </li>
-        <li>
-          <h3>What we tried</h3>
-          <p>A vet visit to rule out anything medical, a food diary, fewer treats, and one change at a time so we could actually tell what was helping.</p>
-        </li>
-        <li>
-          <h3>What worked</h3>
-          <p>A food our vet recommended, introduced slowly over about ten days, fixed meal times and a strict treat budget. Mochi now cleans her bowl, and her tummy is calm.</p>
-        </li>
-      </ol>
-    </section>
+    <!-- To add a question: copy one <details> ... </details> block into the right section. -->
 
-    <!-- ✏️ EDIT: questions use <details>, so they work even without JavaScript.
-         Copy one <details> block to add a new question. -->
-    <section class="wrap faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Questions dog moms ask</h2>
+    <!-- ===================== FOOD & DIET ===================== -->
+    <section class="wrap faq" id="food" aria-labelledby="food-title">
+      <h2 id="food-title">Food &amp; diet</h2>
       <div class="faq-list">
+        <details>
+          <summary>How much should I feed my dog?</summary>
+          <div class="faq-answer">
+            <p>Start with the feeding guide on your dog's food, using your dog's ideal weight rather than their current
+              weight, then adjust based on body shape and activity. Most adult dogs do well on two meals a day; puppies
+              usually need three or four smaller meals.</p>
+            <p>Treats count too: keep them under about 10% of your dog's daily calories. Your vet can tell you what your
+              dog's ideal weight is.</p>
+          </div>
+        </details>
+
         <details>
           <summary>How do I switch my dog to a new food without an upset stomach?</summary>
           <div class="faq-answer">
-            <p>Slowly. We mixed the new food into the old one over about 7 to 10 days: roughly a quarter new for the first few days, then half and half, then three-quarters new, then all new. When Mochi's tummy complained, we stayed on the previous step for a couple more days.</p>
+            <p>Slowly. Mix the new food into the old one over about 7 to 10 days: roughly a quarter new for the first
+              few days, then half and half, then three-quarters new, then all new. If your dog's tummy complains, stay
+              on the previous step for a couple more days.</p>
             <p>Vomiting or diarrhea that keeps going is a reason to call the vet, not to wait it out.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>My dog is a picky eater. What actually helped?</summary>
-          <div class="faq-answer">
-            <p>First, our vet checked for teeth or tummy problems, because sudden pickiness can be a sign that something hurts. After that, routine did more than any topper: meals at the same times, the bowl down for about 15 to 20 minutes, then picked up until the next meal.</p>
-            <p>We also cut back on treats, which are easy to overdo. A common rule of thumb is to keep treats under about 10% of your dog's daily calories.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>How did you find out if it was a food allergy?</summary>
-          <div class="faq-answer">
-            <p>Itchy skin, paw licking and ear trouble can come from food, but also from fleas or things in the environment, so our vet helped us rule those out first.</p>
-            <p>The reliable way to test for a food allergy is an elimination diet set up by your vet, usually a new or specially processed protein for around 8 weeks or more, with nothing else on the side. At-home allergy test kits aren't considered reliable for food allergies.</p>
           </div>
         </details>
 
         <details>
           <summary>Which human foods are dangerous for dogs?</summary>
           <div class="faq-answer">
-            <p>The ones we keep well away from Mochi: chocolate, grapes and raisins, onions, garlic and chives, anything containing xylitol (sugar-free gum, some peanut butters and baked goods), macadamia nuts, alcohol, caffeine and cooked bones.</p>
-            <p>If your dog eats any of these, call your vet or an emergency animal clinic right away. Don't wait for symptoms.</p>
+            <p>Keep these well away from your dog: chocolate, grapes and raisins, onions, garlic, chives and leeks,
+              macadamia nuts, alcohol, caffeine, raw bread dough, cooked bones, and anything containing xylitol, a
+              sweetener also sold as "birch sugar" (sugar-free gum, some peanut butters, candy, baked goods and some
+              medicines).</p>
+            <p>If your dog eats any of these, call your vet or an emergency animal clinic right away, even if they seem
+              fine.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is peanut butter safe for dogs?</summary>
+          <div class="faq-answer">
+            <p>Usually yes, in small amounts, as long as it has no xylitol, which can also be listed as birch sugar or
+              wood sugar. Plain, unsalted peanut butter is the best choice. Check the label every time, especially on
+              "sugar-free", "low sugar" and protein spreads.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Which fruits and vegetables can dogs eat?</summary>
+          <div class="faq-answer">
+            <p>Good small treats include plain cooked pumpkin (not pie filling), carrots, green beans, cucumber,
+              blueberries, banana, apple slices without the seeds or core, and seedless watermelon without the rind.</p>
+            <p>Introduce one new food at a time, in small pieces. Skip grapes, raisins, onions, garlic and avocado.</p>
           </div>
         </details>
 
         <details>
           <summary>Is grain-free food healthier?</summary>
           <div class="faq-answer">
-            <p>Not automatically. True grain allergies are less common than the marketing suggests, and the U.S. FDA has investigated a possible link between some grain-free diets and a heart condition called dilated cardiomyopathy (DCM). We chose Mochi's food with our vet based on her needs, not on label trends.</p>
+            <p>Not automatically. True grain allergies are less common than the marketing suggests, and the U.S. FDA has
+              investigated a possible link between some grain-free diets and a heart condition called dilated
+              cardiomyopathy (DCM). Choose your dog's food with your vet based on your dog's needs, not label trends.
+            </p>
           </div>
         </details>
 
         <details>
-          <summary>How do I know if my dog is a healthy weight?</summary>
+          <summary>My dog is a picky eater. What helps?</summary>
           <div class="faq-answer">
-            <p>A quick check at home: you should be able to feel the ribs easily under a thin layer of padding, see a waist when you look down from above, and see the belly tuck up from the side.</p>
-            <p>The feeding guide on the bag is a starting point, not a rule. We adjusted Mochi's portions with our vet as her activity changed.</p>
+            <p>First, have your vet check for teeth or tummy problems, because sudden pickiness can be a sign that
+              something hurts. After that, routine does more than any topper: meals at the same times, the bowl down for
+              about 15 to 20 minutes, then picked up until the next meal. Cutting back on treats helps a lot too.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I know if my dog has a food allergy?</summary>
+          <div class="faq-answer">
+            <p>Itchy skin, paw licking and ear trouble can come from food, but also from fleas or things in the
+              environment, so your vet will usually rule those out first.</p>
+            <p>The reliable way to test for a food allergy is an elimination diet set up by your vet: usually a new or
+              specially processed protein for around 8 weeks or more, with nothing else on the side. At-home allergy
+              test kits aren't considered reliable for food allergies.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why does my dog eat grass?</summary>
+          <div class="faq-answer">
+            <p>It's very common and usually not a sign of illness; many dogs simply like it. Just make sure the grass
+              hasn't been treated with pesticides or fertilizer. If your dog eats grass frantically, vomits often or
+              seems unwell, check in with your vet.</p>
           </div>
         </details>
       </div>
     </section>
 
+    <!-- ===================== HEALTH & VET CARE ===================== -->
+    <section class="wrap faq" id="health" aria-labelledby="health-title">
+      <h2 id="health-title">Health &amp; vet care</h2>
+
+      <div class="disclosure">
+        <p><strong>Go to a vet or emergency clinic right away if your dog:</strong></p>
+        <ul>
+          <li>has trouble breathing, collapses or can't stand</li>
+          <li>has a swollen, hard belly or keeps trying to vomit but nothing comes up</li>
+          <li>vomits or has diarrhea again and again, or there's blood</li>
+          <li>has eaten something toxic, or has a seizure</li>
+          <li>has pale, blue or very red gums</li>
+          <li>is straining but can't pee</li>
+          <li>has been hit by a car or badly hurt, or shows signs of heatstroke</li>
+        </ul>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>How often should my dog see the vet?</summary>
+          <div class="faq-answer">
+            <p>Healthy adult dogs should have a checkup once a year. Puppies need several visits in their first months
+              for their vaccine series. Senior dogs (around age 7 and up, earlier for giant breeds) benefit from
+              checkups every six months, because problems are easier to treat when they're caught early.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Which vaccines does my dog need?</summary>
+          <div class="faq-answer">
+            <p>North American vet guidelines (from AAHA) recommend "core" vaccines for every dog: distemper, parvovirus,
+              adenovirus (hepatitis), rabies and, since 2024, leptospirosis.</p>
+            <p>Others, like Bordetella (kennel cough), Lyme disease and canine influenza, depend on your dog's lifestyle
+              and where you live. Rabies vaccination is also required by law in many places. Your vet will set the right
+              schedule for your dog.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Does my dog need flea, tick and heartworm prevention all year?</summary>
+          <div class="faq-answer">
+            <p>Ask your vet what fits where you live, but many vets recommend year-round protection. Blacklegged ticks,
+              which can carry Lyme disease, become active whenever it's above about 4°C, so mild winter days count too.
+              Heartworm spreads through mosquito bites.</p>
+            <p>After walks in grass or woods, run your fingers through your dog's coat to check for ticks, especially
+              around the ears, toes and armpits. We check Mochi after every park trip.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>When should I spay or neuter my dog?</summary>
+          <div class="faq-answer">
+            <p>It depends on your dog's adult size. For small breeds (under about 20 kg or 45 lb as adults), AAHA
+              guidelines suggest neutering males at around 6 months and spaying females before their first heat, at
+              around 5 to 6 months.</p>
+            <p>For large breeds, waiting until they stop growing (roughly 9 to 15 months) may lower the risk of some
+              joint problems and cancers. Talk through the timing with your vet.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How can I tell if my dog is in pain? Can I give human pain medicine?</summary>
+          <div class="faq-answer">
+            <p>Signs of pain include limping, not wanting to jump or use stairs, hiding, panting or restlessness while
+              resting, licking one spot, eating less, or growling when touched.</p>
+            <p>Never give human pain relievers like ibuprofen, naproxen or acetaminophen (Tylenol) unless your vet tells
+              you to: they can seriously harm dogs. Your vet can prescribe dog-safe pain relief.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why is my dog scooting on the floor?</summary>
+          <div class="faq-answer">
+            <p>Usually because of full or irritated anal glands, two small scent glands near the bottom. Worms,
+              allergies or skin irritation can also cause it. If it keeps happening, your vet or groomer can check and
+              empty the glands.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I take care of my dog's teeth?</summary>
+          <div class="faq-answer">
+            <p>Brushing is the gold standard: daily is best, and a few times a week still helps. Use toothpaste made for
+              dogs, never human toothpaste, which can contain xylitol or fluoride. Dental chews with the VOHC seal can
+              help between brushings, and many dogs need a professional cleaning from time to time.</p>
+            <p>Bad breath, red gums or dropping food while eating can mean dental pain.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Does a dry, warm nose mean my dog is sick?</summary>
+          <div class="faq-answer">
+            <p>No, that's a myth. A dog's nose changes from wet to dry through the day, after naps or in dry air. Look
+              at the bigger picture instead: energy, appetite, drinking and bathroom habits.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== GROOMING & BEAUTY ===================== -->
+    <section class="wrap faq" id="grooming" aria-labelledby="grooming-title">
+      <h2 id="grooming-title">Grooming &amp; beauty care</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How often should I bathe my dog?</summary>
+          <div class="faq-answer">
+            <p>For most dogs, every 4 to 6 weeks, or whenever they're dirty or smelly. Bathing too often can dry out the
+              skin. Use a shampoo made for dogs, because human shampoo is made for different skin and can irritate it.
+              Rinse well and dry thoroughly, especially in winter.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How often should I trim my dog's nails?</summary>
+          <div class="faq-answer">
+            <p>Usually every 3 to 4 weeks. A good sign it's time: you can hear clicking on hard floors. Trim a little at
+              a time to avoid the quick, the pink part with blood vessels inside. Keep styptic powder handy in case of a
+              nick, or try a nail grinder.</p>
+            <p>If nail trims are stressful, groomers and vet clinics can do them quickly.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How often should I brush my dog?</summary>
+          <div class="faq-answer">
+            <p>It depends on the coat. Short, smooth coats need brushing about once a week. Long or double coats need it
+              several times a week, and daily during shedding season. Wiry terrier coats, like some Jack Russells have,
+              may need hand-stripping by a groomer to stay neat.</p>
+            <p>Brushing also spreads natural oils and helps you spot lumps, ticks and skin problems early.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I clean my dog's ears?</summary>
+          <div class="faq-answer">
+            <p>Use a vet-approved ear cleaner: fill the ear canal, gently massage the base of the ear, let your dog
+              shake, then wipe the outer ear with cotton or gauze. Never push cotton swabs deep into the ear.</p>
+            <p>A bad smell, redness, discharge, head shaking or lots of scratching can mean an ear infection, which
+              needs a vet.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Should I shave my dog in summer?</summary>
+          <div class="faq-answer">
+            <p>Usually not if your dog has a double coat, like huskies, golden retrievers or Pomeranians. That coat
+              helps protect against heat and sunburn, and shaving can change how it grows back. Brushing out the loose
+              undercoat keeps them cooler.</p>
+            <p>Dogs with single coats that are normally clipped, like poodles, can have shorter summer cuts.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do dogs need sunscreen?</summary>
+          <div class="faq-answer">
+            <p>Dogs with thin or light fur, or pink noses and ears, can get sunburned. Use a sunscreen made for dogs,
+              because some human sunscreens contain zinc oxide, which is harmful if licked. Shade and avoiding the
+              midday sun help the most.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why does my dog still smell after a bath?</summary>
+          <div class="faq-answer">
+            <p>A smell that lingers often comes from the ears, teeth, anal glands or a skin infection, or from a coat
+              that stayed damp. If the smell comes back quickly after baths, a vet check is worth it.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== TRAINING & BEHAVIOR ===================== -->
+    <section class="wrap faq" id="training" aria-labelledby="training-title">
+      <h2 id="training-title">Training &amp; behavior</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How much exercise does my dog need?</summary>
+          <div class="faq-answer">
+            <p>It depends on breed, age and health, but many adult dogs need somewhere between 30 minutes and 2 hours of
+              activity a day. High-energy breeds like Jack Russell terriers need plenty of running plus brain work:
+              sniffing walks, puzzle toys and training games.</p>
+            <p>A tired terrier is a well-behaved terrier. Mochi would like to object.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I stop my dog from pulling on the leash?</summary>
+          <div class="faq-answer">
+            <p>Stop walking whenever the leash gets tight, and move forward again when it loosens. Reward your dog with
+              treats and praise for walking beside you. A front-clip harness can help while you train. Keep sessions
+              short, and practice somewhere boring before trying busy streets.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>My dog chases squirrels. How do I manage it?</summary>
+          <div class="faq-answer">
+            <p>Terriers were bred to hunt small animals, so chasing comes naturally. Keep your dog on a leash in
+              unfenced areas, practice a strong recall and "leave it" with really good treats, and give the instinct a
+              safe outlet with tug, flirt poles and sniffing games.</p>
+            <p>Mochi is still in training on this one.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I help a shy or timid dog feel brave?</summary>
+          <div class="faq-answer">
+            <p>Go at your dog's pace. Let them watch new people and dogs from a comfortable distance, reward calm
+              behavior, and let them choose when to say hello. Never force an interaction. Short, positive experiences
+              build confidence over time.</p>
+            <p>If the fear is severe, a certified trainer or a veterinary behaviorist can help.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I help my dog with separation anxiety?</summary>
+          <div class="faq-answer">
+            <p>Practice short absences and build up time alone slowly. Exercise before you leave, offer a long-lasting
+              chew or puzzle toy, and keep goodbyes and hellos calm. A pet camera can show how your dog really copes.
+            </p>
+            <p>Destructive behavior, nonstop barking or accidents when alone are worth discussing with your vet or a
+              behavior professional.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUCTS & GEAR ===================== -->
+    <section class="wrap faq" id="gear" aria-labelledby="gear-title">
+      <h2 id="gear-title">Products &amp; gear</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Harness or collar: which is better?</summary>
+          <div class="faq-answer">
+            <p>A harness spreads pressure across the chest instead of the neck, which is great for small dogs, pullers
+              and dogs with breathing or neck issues. A collar is still handy for ID tags, so many dog parents use both.
+              You should be able to fit two fingers under any strap.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Which toys and chews are safe?</summary>
+          <div class="faq-answer">
+            <p>Choose toys too big to swallow, supervise chewing, and throw away toys that are falling apart. Avoid
+              cooked bones, and be careful with very hard chews like antlers: a common vet tip is that if you can't dent
+              it with your fingernail, it may be hard enough to crack a tooth.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Should I microchip my dog?</summary>
+          <div class="faq-answer">
+            <p>Yes. It's one of the best ways to get a lost dog home. A vet places a tiny chip under the skin in a quick
+              appointment. The chip only helps if your contact details are registered and up to date, so update them
+              whenever you move, and keep an ID tag on the collar too.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is pet insurance worth it?</summary>
+          <div class="faq-answer">
+            <p>It can be, especially for big unexpected bills like surgery or emergencies. Compare the monthly cost,
+              deductible, reimbursement percentage and what's excluded. Pre-existing conditions usually aren't covered,
+              so many people sign up while their dog is young and healthy. Some prefer a dedicated savings account
+              instead. Either way, have a plan.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Does my dog need a winter coat or boots?</summary>
+          <div class="faq-answer">
+            <p>Small, short-coated or lean dogs feel the cold faster and often benefit from a coat. Boots protect paws
+              from ice, snowballs between the toes and road salt. If your dog won't wear them, wipe their paws with a
+              warm damp cloth after walks and use a paw balm.</p>
+            <p>Shivering, lifting paws or slowing down means it's time to head home. (A very Canadian dog question.)</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== EVERYDAY LIFE ===================== -->
+    <section class="wrap faq" id="life" aria-labelledby="life-title">
+      <h2 id="life-title">Everyday life &amp; rescue pups</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How hot is too hot for a walk?</summary>
+          <div class="faq-answer">
+            <p>Press the back of your hand on the pavement for 7 seconds: if it's too hot for you, it's too hot for
+              paws. On hot days, walk early or late, bring water and choose shady routes. Never leave a dog in a parked
+              car, even with the windows cracked, because it heats up dangerously in minutes.</p>
+            <p>Heavy panting, drooling, bright red gums, wobbling or vomiting can mean heatstroke. Move your dog
+              somewhere cool, wet them with cool (not ice-cold) water and get to a vet.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long can I leave my dog home alone?</summary>
+          <div class="faq-answer">
+            <p>Many trainers suggest adult dogs shouldn't be left more than about 4 to 6 hours without a potty break and
+              some company; puppies need breaks much more often. A dog walker, a midday visit or doggy daycare can help
+              on long days.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long does a rescue dog take to settle in?</summary>
+          <div class="faq-answer">
+            <p>Many rescues use the "3-3-3" guide: about 3 days to decompress (your dog may be nervous or not eat much),
+              3 weeks to learn your routine, and 3 months to truly feel at home. Every dog is different, so be patient,
+              keep a steady routine and let trust grow.</p>
+            <p>Mochi is a rescue too, and she says it was worth the wait.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is it okay for my dog to sleep in my bed?</summary>
+          <div class="faq-answer">
+            <p>It's a personal choice. For healthy dogs and people it's generally fine, and many dogs love it. Keep up
+              flea and tick prevention, and if your dog guards the bed or you're losing sleep, a cozy dog bed next to
+              yours works just as well.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== ASK A QUESTION ===================== -->
     <section class="wrap ask" id="ask" aria-labelledby="ask-title">
       <div class="ask__grid">
         <div class="ask__intro">
           <h2 id="ask-title">Ask Mochi's mom</h2>
-          <p>Stuck on something with your own dog's food? Send your question. Mom reads every one and replies by email when she can.</p>
-          <p>Questions that come up a lot may be added to the FAQ above, without your name.</p>
+          <p>Got a question about food, health, grooming, training or gear that isn't answered here? Send it in. Mom
+            reads every one and replies by email when she can.</p>
+          <p>Questions that come up a lot may be added to this FAQ, without your name.</p>
         </div>
 
         <form class="ask-form" id="askForm" novalidate>
-          <p class="setup-notice" id="setupNotice" hidden>Site owner: add <code>formEndpoint</code> or <code>contactEmail</code> in <code>js/config.js</code> to turn this form on.</p>
+          <p class="setup-notice" id="setupNotice" hidden>Site owner: add <code>formEndpoint</code> or
+            <code>contactEmail</code> in <code>js/config.js</code> to turn this form on.</p>
 
           <div class="field-row">
             <div class="field">
@@ -133,7 +511,8 @@
             </div>
             <div class="field">
               <label for="askEmail">Email</label>
-              <input id="askEmail" name="email" type="email" maxlength="120" autocomplete="email" required aria-describedby="askEmailError">
+              <input id="askEmail" name="email" type="email" maxlength="120" autocomplete="email" required
+                aria-describedby="askEmailError">
               <p class="field-error" id="askEmailError"></p>
             </div>
           </div>
@@ -145,7 +524,8 @@
 
           <div class="field">
             <label for="askQuestion">Your question</label>
-            <textarea id="askQuestion" name="message" maxlength="1500" required aria-describedby="askQuestionError askCounter"></textarea>
+            <textarea id="askQuestion" name="message" maxlength="1500" required
+              aria-describedby="askQuestionError askCounter"></textarea>
             <p class="field-error" id="askQuestionError"></p>
             <span class="counter" id="askCounter">0 / 1500</span>
           </div>
@@ -158,7 +538,8 @@
 
           <label class="consent" for="askConsent">
             <input id="askConsent" name="consent" type="checkbox" required aria-describedby="askConsentError">
-            <span>I agree that my question and email are used to reply to me, as described in the <a href="privacy.html">privacy policy</a>.</span>
+            <span>I agree that my question and email are used to reply to me, as described in the <a
+                href="privacy.html">privacy policy</a>.</span>
           </label>
           <p class="field-error" id="askConsentError"></p>
 
@@ -180,8 +561,10 @@
         <li><a href="privacy.html">Privacy</a></li>
       </ul>
       <p>&copy; <span data-year>2026</span> Mochi the Menace</p>
-      <p class="footer-disclosure" data-footer-disclosure hidden>Some links on this site are affiliate links. Mochi may earn a small commission at no extra cost to you.</p>
+      <p class="footer-disclosure" data-footer-disclosure hidden>Some links on this site are affiliate links. Mochi may
+        earn a small commission at no extra cost to you.</p>
     </div>
   </footer>
 </body>
+
 </html>

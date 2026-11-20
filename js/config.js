@@ -18,7 +18,7 @@ window.MOCHI_CONFIG = {
       id: 'instagram',
       label: 'Instagram',
       handle: '@mochi_the_menace',
-      url: 'https://www.instagram.com/mochi_the_menace/'
+      url: 'https://www.instagram.com/_mochi_the_menace_?jplx=NWVkaGltaWQwNDNj&utm_source=qr'
     },
     {
       id: 'facebook',
@@ -43,7 +43,7 @@ window.MOCHI_CONFIG = {
     {
       name: 'Everyday harness',
       note: 'The one Mochi cannot wriggle out of. We tried.',
-      url: '', // ✏️
+      url: 'https://www.instagram.com/_mochi_the_menace_?jplx=NWVkaGltaWQwNDNj&utm_source=qr', // ✏️
       code: ''
     },
     {
@@ -74,11 +74,11 @@ window.MOCHI_CONFIG = {
   contactEmail: '', // ✏️ e.g. 'askmochismom@gmail.com'
 
   /* ---------- Photo book + videos (Home page) ------------------------
-     Put photos in  assets/images/  named moch1.jpg, moch2.jpg, moch3.jpg ...
-     Put videos in  assets/videos/  named moch1.mp4, moch2.mp4 ...
+     Put photos in  assets/images/  named mochi1.jpg, mochi2.jpg, mochi3.jpg ...
+     Put videos in  assets/videos/  named mochi1.mp4, mochi2.mp4 ...
      The site finds them automatically. Don't skip more than 4 numbers in a row. */
   gallery: {
-    filePrefix: 'moch',
+    filePrefix: 'mochi',
     coverPhoto: 1, // which photo goes on the book cover and profile picture
 
     // Optional captions. The number matches the file: 1 = moch1.jpg
